@@ -39,6 +39,7 @@ RUN apt-get update && apt-get upgrade -y \
     && docker-php-ext-install -j$(nproc) intl \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
     && docker-php-ext-install ldap \
+    && docker-php-ext-install -j$(nproc) mysql \
     && docker-php-ext-install -j$(nproc) \
     bcmath \
     bz2 \
@@ -48,7 +49,6 @@ RUN apt-get update && apt-get upgrade -y \
     mbstring \
     mcrypt \
     mysqli \
-    mysql \
     opcache \
     pdo_mysql \
     pdo_pgsql \
